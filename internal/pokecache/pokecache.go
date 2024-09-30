@@ -36,6 +36,13 @@ func (c *Cache) Add(key string, value []byte) {
     }
 }
 
+func (c *Cache) Get(key string) ([]byte, bool) {
+    c.mux.Lock()
+    defer c.mux.Unlock()
+    val, ok := c.cache[key]
+    return val.val, ok
+}
+
 func (c *Cache) reapLoop(interval time.Duration) {
     ticker := time.NewTicker(interval)
     for range ticker.C {
