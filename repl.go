@@ -73,7 +73,7 @@ func getCommands() map[string]cliCommand {
         },
         "inspect": {
             name:           "inspet <pokemon_name>",
-            description:    "Inspect a Pokemon",
+            description:    "View details about a caught Pokemon",
             callback:       commandInspect,
         },
         "explore": {
@@ -90,6 +90,11 @@ func getCommands() map[string]cliCommand {
             name:           "mapb",
             description:    "Get the previous page of locations",
             callback:       commandMapb,
+        },
+        "pokedex": {
+            name:           "pokedex",
+            description:    "See all the pokemon you've caught",
+            callback:       commandPokedex,
         },
         "exit": {
             name:           "exit",
