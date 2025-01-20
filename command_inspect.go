@@ -25,7 +25,7 @@ func commandInspect(cfg *config, args ...string) error {
     }
     fmt.Println("Types:")
     for _, typeInfo := range pokemon.Types {
-        fmt.Printf("  -", typeInfo.Type.Name)
+        fmt.Println("  -", typeInfo.Type.Name)
     }
     return nil
 }
